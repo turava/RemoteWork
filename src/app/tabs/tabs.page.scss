@@ -1,1 +1,13 @@
 
+ion-tab-bar{
+  --border: transparent;
+  height: 100px;
+}
+ion-icon{
+  border-radius: 50%;
+  border: 4px solid #a3c9cf;
+  background: #a8ccd1;
+  padding: 10px;
+  box-shadow: 0.2rem 0.2rem 10px #3d7f8b, -0.2rem -0.2rem  6px #cff0f5;
+ color: #3d7f8b !important;
+}
