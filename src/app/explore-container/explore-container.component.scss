@@ -1,13 +1,13 @@
 #container {
   text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+//  position: absolute;
+ // left: 0;
+ // right: 0;
+ // top: 50%;
+ // transform: translateY(-50%);
   background-color: #b2d1d6;
-  padding: 100px 0;
+ // padding: 100px 0;
 }
 
 #container strong {
@@ -50,6 +50,37 @@ align-content: center;
   width: 100%;
   height: 100%;
   font-weight: 800;
-  opacity: 0.5;
- background: linear-gradient(-45deg, #f4feff -10%, #3e828e 80%)
+  //opacity: 0.5;
+ background: linear-gradient(-45deg, #f4feff -10%, #3e828e 80%);
+  color:#0e6979;
+  z-index: 1;
 }
+.start-btn-content:active {
+  transform: scale(0.5) translate(-100%, -100%);
+  color: #1da27b;
+ // background-color: #3e8e41;
+ // box-shadow: 0 5px #666;
+ // transform: translateY(4px);
+}
+p{
+  padding: 10%;
+  text-align: start;
+}
+.input{
+  padding: 10%;
+}
+ion-input{border-radius: 20px;
+  --background: #bbdce0 !important;
+  color: #005969;
+  font-weight: 500;
+}
+
+.chips{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: start;
+  margin-left: 10%;
+}
+
