@@ -1,17 +1,16 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-     Notifications
-    </ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Notifications</ion-title>
+      <ion-segment value="all" >
+        <ion-segment-button value="all">Users</ion-segment-button>
+        <ion-segment-button value="favorites">Notifications</ion-segment-button>
+      </ion-segment>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <app-workers-list></app-workers-list>
 </ion-content>

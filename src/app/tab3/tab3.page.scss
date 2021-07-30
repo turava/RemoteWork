@@ -1,0 +1,15 @@
+
+ion-toolbar {
+  ion-segment {
+   // --color-checked: red;
+    --background: #3e828e;
+  }
+  ion-segment-button{
+    --color: #b8d8dd;
+    --color-checked: #27454f;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+    --indicator-box-shadow:  1px 5px 49px 18px #142028;
+  }
+}
+
