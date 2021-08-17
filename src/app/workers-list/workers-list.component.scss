@@ -38,3 +38,8 @@ ion-chip{
 .ion-color.sc-ion-label-ios-h {
    color: inherit;
 }
+ion-list{
+  box-shadow: 1rem 0.4rem 30px #3d7f8b;
+  --padding-top: 2rem;
+  margin-top: 2rem;
+}
