@@ -1,0 +1,44 @@
+.hidden-list{
+  display: none;
+}
+.btn-hide{
+  color: #bedde2;
+  font-size: 26px;
+}
+.btn-show{
+  color: #bedde2;
+  font-size: 26px;
+  background-color: transparent;
+  --background: #9abbbf;
+}
+
+.show-list{display: block;}
+.menu{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  background: #9abbbf;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  height: 100%;
+  padding-top: 1rem;
+}
+// Footer
+.show-btn{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+.show-footer{
+  display: flex;
+  background: #9abbbf;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+.hide-footer{
+  display: none;
+
+}
