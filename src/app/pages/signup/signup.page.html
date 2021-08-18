@@ -1,9 +1,52 @@
-<ion-header>
+<ion-header class="ion-no-border no-padding">
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button color="secondary"></ion-back-button><!-- text="" icon="add"-->
+      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-header>
+    <ion-text>
+      <h3 class="bold-3d">Create new account</h3>
+    </ion-text>
+  </ion-header>
+
+  <form >
+    <div class="input">
+      <ion-input placeholder="Email"></ion-input>
+    </div>
+
+    <div class="input">
+      <ion-input placeholder="Password"></ion-input>
+    </div>
+
+
+
+    <div class="coloured-btn">
+      <ion-button >
+        Registrarse
+      </ion-button>
+    </div>
+
+
+  </form>
+
+  <div>
+
+
+    <div class="common-btn">
+      <ion-item lines="none">
+        <ion-img slot="end" src="../../assets/icon/google.png"></ion-img>
+        <ion-label>Registrarse con </ion-label>
+      </ion-item>
+    </div>
+
+
+  </div>
 </ion-content>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  showMenu = false;
-  constructor() {
+  showMenu = true;
+  constructor( private router: ActivatedRoute) {
   }
 
   ngOnInit() {
   }
-  showSlide(){
+  showSlide(){ // Menu css boolean
    if(this.showMenu){this.showMenu = false;
    } else{  this.showMenu = true;}
    console.log(this.showMenu);
+  }
+  createNewUser(){
+     // this.router.navigate(['/signup']);
   }
 }
