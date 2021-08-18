@@ -1,9 +1,13 @@
 
 <ion-content>
 
+<ion-header>
+<ion-text>
+  <h3 class="bold-3d">Welcome to your work calendar</h3>
+</ion-text>
+</ion-header>
 
-
-<form>
+  <form>
   <div class="input">
     <ion-input placeholder="Email"></ion-input>
   </div>
@@ -12,21 +16,32 @@
     <ion-input placeholder="Password"></ion-input>
   </div>
 
-  <div class="coloured-btn">
-  <ion-button >
-    Entrar
 
+    <ion-button fill="clean"  slot="end" color="warning" class="btn-clean-danger">
+     Recuperar contraseña
+    </ion-button>
+
+ <div class="coloured-btn">
+  <ion-button >
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    Iniciar sesión
   </ion-button>
   </div>
 
+
   <div class="common-btn">
-    <ion-button expand="block" >
-     <span slot="start" >Crear usuario</span>
-      <ion-icon slot="end"  name="chevron-forward-outline"></ion-icon>
-    </ion-button>
+    <ion-item lines="none">
+      <ion-img slot="end" src="../../assets/icon/google.png"></ion-img>
+      <ion-label>Entrar con </ion-label>
+    </ion-item>
   </div>
 
-
+  <div class="common-btn">
+  <ion-item lines="none">
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    <ion-label>Crear usuario</ion-label>
+  </ion-item>
+  </div>
 
 </form>
 
