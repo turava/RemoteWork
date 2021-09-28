@@ -9,16 +9,20 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
-  },
-  {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./pages/authentification/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+    loadChildren: () => import('./pages/authentification/signup/signup.module').then(m => m.SignupPageModule)
+  },
+  {
+    path: 'verify-email',
+    loadChildren: () => import('./pages/authentification/verify-email/verify-email.module').then(m => m.VerifyEmailPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/authentification/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   }
 ];
 @NgModule({

@@ -20,8 +20,7 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/login']);
       window.alert('no signed');
     } else{
-      window.alert('signed');
-     // this.router.navigate(['/']);
+    //  window.alert('signed');
     }
     return true;
   }
