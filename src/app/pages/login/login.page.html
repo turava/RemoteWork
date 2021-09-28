@@ -9,17 +9,17 @@
 
   <form [ngClass]="{'hidden-list': !showMenu , 'show-list' : showMenu}">
   <div class="input">
-    <ion-input placeholder="Email"></ion-input>
+    <ion-input placeholder="Email" #userName required></ion-input>
   </div>
 
   <div class="input">
-    <ion-input placeholder="Password"></ion-input>
+    <ion-input placeholder="Password" #userPassword required></ion-input>
   </div>
 
 
 
  <div class="coloured-btn">
-  <ion-button >
+  <ion-button (click)="authService.signIn(userName.value, userPassword.value)">
     Iniciar sesión
   </ion-button>
   </div>
@@ -37,7 +37,8 @@
 
     <div class="common-btn">
       <ion-item lines="none">
-        <ion-img slot="end" src="../../assets/icon/google.png"></ion-img>
+        <ion-img slot="end" src="../../assets/icon/google.png"
+                 (click)="authService.googleAuth()"></ion-img>
         <ion-label>Entrar con </ion-label>
       </ion-item>
     </div>

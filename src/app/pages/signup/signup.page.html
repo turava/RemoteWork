@@ -18,17 +18,17 @@
 
   <form >
     <div class="input">
-      <ion-input placeholder="Email"></ion-input>
+      <ion-input placeholder="Email" #userEmail></ion-input>
     </div>
 
     <div class="input">
-      <ion-input placeholder="Password"></ion-input>
+      <ion-input placeholder="Password" #userPwd></ion-input>
     </div>
 
 
 
     <div class="coloured-btn">
-      <ion-button >
+      <ion-button (click)="authService.signUp(userEmail.value, userPwd.value)">
         Registrarse
       </ion-button>
     </div>
@@ -40,8 +40,9 @@
 
 
     <div class="common-btn">
-      <ion-item lines="none">
-        <ion-img slot="end" src="../../assets/icon/google.png"></ion-img>
+      <ion-item lines="none" >
+        <ion-img slot="end" src="../../assets/icon/google.png"
+                 (click)="authService.googleAuth()"></ion-img>
         <ion-label>Registrarse con </ion-label>
       </ion-item>
     </div>
