@@ -36,12 +36,14 @@ export class AuthService {
 
   // Sign in with email and password
   signIn(email, password) {
+
+    this.router.navigate(['/tabs']);
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         console.log('signed in');
-       /* this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        });*/
+        this.ngZone.run(() => {
+          this.router.navigate(['../tabs']);
+        });
        // TODO navigation
         window.alert('signed in');
         this.setUserData(result.user);
@@ -68,7 +70,7 @@ export class AuthService {
     const user = this.afAuth.currentUser;
     return firebase.auth().currentUser.sendEmailVerification()
       .then(() => {
-        this.router.navigate(['verify-email-address']);
+        this.router.navigate(['verify-email']);
       });
   }
   sendEmailVerify(): Promise<void> {
@@ -108,6 +110,7 @@ export class AuthService {
   // Sign in with Google
   googleAuth() {
     return this.authLogin(new firebase.auth.GoogleAuthProvider());
+    //this.router.navigate(['/']);
   }
 
   // Auth logic to run auth providers
@@ -127,7 +130,8 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  setUserData(user) {
+  setUserData(user) { // TODO backend request
+    console.log('firebase user doc set');
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const userData: User = {
       uid: user.uid,

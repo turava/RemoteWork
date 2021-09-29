@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {AuthService} from "../../../services/auth.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +9,14 @@ import {AuthService} from "../../../services/auth.service";
 })
 export class LoginPage implements OnInit {
   showMenu = true;
-  constructor( private router: ActivatedRoute,
+  showPass: boolean;
+  public type = 'password';
+  constructor( private router: Router,
                public authService: AuthService) {
   }
 
   ngOnInit() {
+    this.router.navigate(['/tabs']);
   }
   showSlide(){ // Menu css boolean
    if(this.showMenu){this.showMenu = false;
@@ -22,5 +25,13 @@ export class LoginPage implements OnInit {
   }
   createNewUser(){
      // this.router.navigate(['/signup']);
+  }
+  showPassword() {
+    this.showPass = !this.showPass;
+    if (this.showPass){
+      this.type = 'text';
+    } else {
+      this.type = 'password';
+    }
   }
 }

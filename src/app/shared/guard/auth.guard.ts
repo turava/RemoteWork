@@ -11,16 +11,12 @@ export class AuthGuard implements CanActivate {
                public router: Router) {
   }
   canActivate(
-  /*  route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;*/
   next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if(this.authService.isLoggedIn !== true) {
+      // Redirect customer to login page after any auth firebase user have been signed in
       this.router.navigate(['/login']);
-      window.alert('no signed');
-    } else{
-    //  window.alert('signed');
+     // window.alert('no signed');
     }
     return true;
   }

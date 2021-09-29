@@ -5,12 +5,15 @@ ion-item{
 //--padding-start: 0;
  // --padding-top: 10px;
 }
-
+.eye-btn{
+  background-color: transparent;
+}
 .input{
   margin: 10%;
   background: linear-gradient(177deg, #7ba7af 0%, rgb(217 239 243 / 99%) 70%);
   padding: 2px;
   border-radius: 20px;
+  display: flex;
 }
 ion-input{
   height: 60px;

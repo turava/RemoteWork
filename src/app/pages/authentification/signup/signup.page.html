@@ -23,6 +23,17 @@
 
     <div class="input">
       <ion-input placeholder="Password" #userPwd></ion-input>
+      <ion-button *ngIf="!showPass"   type="button" class="eye-btn"
+                  slot="end" fill="clear"
+                  (click)="showPassword()">
+        <ion-icon name="eye-outline" slot="icon-only" color="dark"> </ion-icon>
+
+      </ion-button>
+      <ion-button *ngIf="showPass"   type="button"
+                  slot="end" fill="clear" class="eye-btn"
+                  (click)="showPassword()">
+        <ion-icon name="eye-off-outline" slot="icon-only" color="dark"></ion-icon>
+      </ion-button>
     </div>
 
 
@@ -31,6 +42,7 @@
       <ion-button (click)="authService.signUp(userEmail.value, userPwd.value)">
         Registrarse
       </ion-button>
+
     </div>
 
 
