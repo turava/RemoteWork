@@ -13,10 +13,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import { AuthService } from './services/auth.service';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    HttpClientModule,
    // AngularFireAuthModule,
     //AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

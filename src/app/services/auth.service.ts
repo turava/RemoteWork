@@ -41,12 +41,14 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         console.log('signed in');
+        // TODO retrieve user api and save to local storage
         this.ngZone.run(() => {
           this.router.navigate(['../tabs']);
         });
        // TODO navigation
         window.alert('signed in');
         this.setUserData(result.user);
+        // Retrieve User from ApiUser
       }).catch((error) => {
         window.alert(error.message);
       });
@@ -153,5 +155,31 @@ export class AuthService {
       window.alert('signed out');
     });
   }
-
+  // Retrieve token
+  async userToken(){
+    return new Promise(async(resolve, reject) => {
+      firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+        .then(function (idToken) {
+          // Send token to your backend via HTTPS
+          resolve(idToken);
+        }).catch(function (error) {
+        // Handle error
+        reject(error);
+      });
+    });
+  }
+  // Retrieve user
+  async userState(): Promise<any>{
+    return new Promise(async( resolve, reject) => {
+      await this.afAuth.onAuthStateChanged((user) => {
+        if (user) {
+          console.log('sesion iniciada');
+          resolve('ok');
+        } else {
+          console.log('sesion cerrada');
+          reject();
+        }
+      });
+    });
+  }
 }

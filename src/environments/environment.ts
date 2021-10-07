@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'www.google.com',
   firebaseConfig : {
     apiKey: 'AIzaSyAiM-87yIlZKrGcHhQNjX0WuRM9qC2Lzoc',
     authDomain: 'remotework-app.firebaseapp.com',
