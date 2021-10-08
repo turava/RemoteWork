@@ -26,7 +26,7 @@ export class ApiUserService {
     console.log('en el servicio');
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get(this.urlDev + '/api/user/data', data);
+    return this.http.get('https://kuse0.free.beeceptor.com/my/api/user');//this.urlDev+'sdfs' +data
   }
   //Api: Retrieve user data by token
   updateUserData(data: any){

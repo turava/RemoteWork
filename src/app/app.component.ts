@@ -37,6 +37,7 @@ export class AppComponent implements OnInit, OnDestroy{
   async ngOnInit() {
     if (await this.userState()) {
       this.token = <string>await this.userToken();
+      await this.getUserData();
       this.user = JSON.parse(localStorage.getItem('user'));
     }
   }
@@ -59,13 +60,9 @@ export class AppComponent implements OnInit, OnDestroy{
     this.subscrUserData =  await this.apiUser.getUserData(data)
       .subscribe(
         (response: any ) => {
-          if(response.errorList[0]){
-          }else {
             this.user = response;
             console.log(response);
             localStorage.setItem('user', JSON.stringify(this.user));
-            console.log(JSON.parse(localStorage.getItem('user')));
-          }
         },
         () => {}
       );
@@ -73,5 +70,6 @@ export class AppComponent implements OnInit, OnDestroy{
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
+    this.subscrUserData.unsubscribe();
   }
 }
