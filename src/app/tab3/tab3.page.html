@@ -4,6 +4,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense" class="ion-no-border">
+
     <ion-toolbar>
       <ion-segment value="all" >
         <ion-segment-button value="all">Team</ion-segment-button>
@@ -11,6 +12,9 @@
       </ion-segment>
     </ion-toolbar>
   </ion-header>
+
+  <app-notifications></app-notifications>
+
 
   <app-workers-list></app-workers-list>
 </ion-content>
